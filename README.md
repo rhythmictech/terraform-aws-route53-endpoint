@@ -1,4 +1,6 @@
 # terraform-aws-route53-endpoint
+[![](https://github.com/rhythmictech/terraform-aws-route53-endpoint/workflows/check/badge.svg)](https://github.com/rhythmictech/terraform-aws-route53-endpoint/actions)
+
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
