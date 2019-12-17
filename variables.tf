@@ -1,5 +1,4 @@
-data "aws_caller_identity" "current" {
-}
+data "aws_caller_identity" "current" {}
 
 locals {
   common_tags = {
@@ -7,7 +6,6 @@ locals {
     env       = var.env
     owner     = var.owner
   }
-
 }
 
 variable "vpc_id" {
@@ -32,9 +30,8 @@ variable "owner" {
 }
 
 variable "additional_tags" {
-  default = {
-  }
-  type = map(string)
+  default = {}
+  type    = map(string)
 }
 
 variable "direction" {
@@ -52,6 +49,5 @@ variable "ip_addresses" {
 
 variable "allowed_resolvers" {
   default = []
-  type = list(string)
+  type    = list(string)
 }
-
