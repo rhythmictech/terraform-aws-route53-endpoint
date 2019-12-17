@@ -6,7 +6,6 @@ resource "aws_security_group" "r53_endpoint_sg" {
   lifecycle {
     create_before_destroy = true
   }
-
 }
 
 resource "aws_security_group_rule" "endpoint_dns_udp" {
