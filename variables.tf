@@ -52,6 +52,5 @@ variable "ip_addresses" {
 
 variable "allowed_resolvers" {
   default = []
-  type = list(string)
+  type    = list(string)
 }
-
