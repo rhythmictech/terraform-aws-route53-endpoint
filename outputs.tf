@@ -1,3 +1,4 @@
 output "endpoint_id" {
-  value = aws_route53_resolver_endpoint.resolver_endpoint.id
+  description = "Resolver endpoint ID"
+  value       = aws_route53_resolver_endpoint.resolver_endpoint.id
 }
