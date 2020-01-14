@@ -27,7 +27,7 @@ module "route53-outbound" {
   source            = "git::https://github.com/rhythmictech/terraform-aws-route53-endpoint"
   allowed_resolvers = ["192.168.100.10/32", "192.168.100.11/32"]
   direction         = "outbound"
-  vpc_id            = module.vpc.vpc_id
+  vpc_id            = "vpc-1234567"
 
   ip_addresses      = [
     {
