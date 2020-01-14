@@ -43,23 +43,19 @@ module "route53-outbound" {
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
 
-| Name               | Description |     Type     | Default | Required |
-| ------------------ | ----------- | :----------: | :-----: | :------: |
-| additional\_tags   |             | map(string)  |  `{}`   |    no    |
-| allowed\_resolvers |             | list(string) |  `[]`   |    no    |
-| direction          |             |    string    |   n/a   |   yes    |
-| env                |             |    string    |   n/a   |   yes    |
-| ip\_addresses      |             |    object    |   n/a   |   yes    |
-| namespace          |             |    string    |   n/a   |   yes    |
-| owner              |             |    string    |   n/a   |   yes    |
-| region             |             |    string    |   n/a   |   yes    |
-| vpc\_id            |             |    string    | `"vpc"` |    no    |
+| Name | Description | Type | Default | Required |
+|------|-------------|:----:|:-----:|:-----:|
+| allowed\_resolvers | List of allowed CIDRs. For inbound endpoints, this should be the list of CIDRs allowed to query. For outbound endpoints, this should be the list of DNS servers the endpoint will talk to. | list(string) | `[]` | no |
+| direction | Specify inbound or outbound for type of resolver endpoint | string | n/a | yes |
+| ip\_addresses | Specify subnets and IP addresses to use for your endpoints. subnet\_id is mandatory, ip is optional | list(map(any)) | n/a | yes |
+| tags | Tags to apply to created resources | map(string) | `{}` | no |
+| vpc\_id | VPC ID to place resolver endpoints in | string | n/a | yes |
 
 ## Outputs
 
-| Name         | Description |
-| ------------ | ----------- |
-| endpoint\_id |             |
+| Name | Description |
+|------|-------------|
+| endpoint\_id | Resolver endpoint ID |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
