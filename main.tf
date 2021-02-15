@@ -10,8 +10,8 @@ resource "aws_security_group" "r53_endpoint_sg" {
 
 resource "aws_security_group_rule" "endpoint_dns_udp" {
   type              = var.direction == "inbound" ? "ingress" : "egress"
-  from_port         = 53
-  to_port           = 53
+  from_port         = var.dns_port
+  to_port           = var.dns_port
   protocol          = "udp"
   cidr_blocks       = var.allowed_resolvers
   security_group_id = aws_security_group.r53_endpoint_sg.id
@@ -19,8 +19,8 @@ resource "aws_security_group_rule" "endpoint_dns_udp" {
 
 resource "aws_security_group_rule" "endpoint_dns_tcp" {
   type              = var.direction == "inbound" ? "ingress" : "egress"
-  from_port         = 53
-  to_port           = 53
+  from_port         = var.dns_port
+  to_port           = var.dns_port
   protocol          = "tcp"
   cidr_blocks       = var.allowed_resolvers
   security_group_id = aws_security_group.r53_endpoint_sg.id

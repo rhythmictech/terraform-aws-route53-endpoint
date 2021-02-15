@@ -30,3 +30,9 @@ variable "vpc_id" {
   description = "VPC ID to place resolver endpoints in"
   type        = string
 }
+
+variable "dns_port" {
+  default     = 53
+  type        = number
+  description = "Port used by DNS"
+}
