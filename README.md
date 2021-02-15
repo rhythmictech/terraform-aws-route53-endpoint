@@ -57,6 +57,7 @@ module "route53-outbound" {
 | Name | Description |
 |------|-------------|
 | endpoint\_id | Resolver endpoint ID |
+| security\_group\_id | Resolver endpoint security group ID |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
