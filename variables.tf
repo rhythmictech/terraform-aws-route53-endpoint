@@ -20,6 +20,12 @@ variable "ip_addresses" {
   #  }
 }
 
+variable "name" {
+  description = "The friendly name of the Route 53 Resolver endpoint"
+  type        = string
+  default     = null
+}
+
 variable "tags" {
   default     = {}
   description = "Tags to apply to created resources"
