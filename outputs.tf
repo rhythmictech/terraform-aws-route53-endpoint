@@ -10,5 +10,5 @@ output "security_group_id" {
 
 output "ip_addresses" {
   description = "Resolver IP addresses"
-  value       = aws_route53_resolver_endpoint.resolver_endpoint.ip_address
+  value = [for obj in aws_route53_resolver_endpoint.resolver_endpoint.ip_address : obj.ip]
 }
