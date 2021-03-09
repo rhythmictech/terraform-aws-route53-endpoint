@@ -9,6 +9,7 @@ module "route53-inbound" {
   source            = "git::https://github.com/rhythmictech/terraform-aws-route53-endpoint"
   allowed_resolvers = ["192.168.100.0/24"]
   direction         = "inbound"
+  name              = "corporate-vpn"
   vpc_id            = "vpc-1234567"
 
   ip_addresses      = [
@@ -49,6 +50,7 @@ module "route53-outbound" {
 | direction | Specify inbound or outbound for type of resolver endpoint | `string` | n/a | yes |
 | dns\_port | Port used by DNS | `number` | `53` | no |
 | ip\_addresses | Specify subnets and IP addresses to use for your endpoints. subnet\_id is mandatory, ip is optional | `list(map(any))` | n/a | yes |
+| name | Friendly name of the endpoint | `string` | null | no |
 | tags | Tags to apply to created resources | `map(string)` | `{}` | no |
 | vpc\_id | VPC ID to place resolver endpoints in | `string` | n/a | yes |
 
