@@ -60,6 +60,7 @@ module "route53-outbound" {
 |------|-------------|
 | endpoint\_id | Resolver endpoint ID |
 | security\_group\_id | Resolver endpoint security group ID |
+| ip\_addresses | Resolver IP addresses in your VPC that you want DNS queries to pass through |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
